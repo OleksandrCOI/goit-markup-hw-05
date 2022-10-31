@@ -164,7 +164,7 @@ body {
 }
 
 .nav-studio {
-    
+    position: relative;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -175,7 +175,7 @@ body {
 }
 
 .nav-portfolio {
-
+    position: relative;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -185,10 +185,12 @@ body {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-studio::after, .nav-portfolio::after {
+.emphasis::after {
     content: "";
     position: absolute;
-    width: 48px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     height: 4px;
 
     background: #2196F3;
@@ -439,6 +441,51 @@ body {
     list-style: none;
     display: flex;
     justify-content: space-between;
+}
+
+.img-text-top {
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* .text-top::before {
+    
+} */
+
+.text-top {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    /* top: 53%; */
+    bottom: 0px;
+    overflow: auto;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    /* text-align: center; */
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+    background: rgba(47, 48, 58, 0.8);
+
+
+    /* position: absolute;
+    top: 0;
+    transform: translateY(100%);
+    transition: 250ms linear;
+    overflow: auto;
+
+    padding: 61px 24px 65px 24px;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em; */
+    
 }
 
 /* --- наша команда --- */
@@ -814,7 +861,7 @@ border-radius: 4px;
     position: absolute;
     top: 0;
     transform: translateY(100%);
-    transition: 300ms linear;
+    transition: 250ms linear;
     overflow: auto;
 
     padding: 61px 24px 65px 24px;
@@ -831,29 +878,56 @@ border-radius: 4px;
 
 /*! --- модальне вікно --- */
 
-/*
-
-.для контейнера (батька) {
-
+.backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 250ms linear, visibility 250ms linear;
+    
 }
-position: relatiwe;
 
-.дитина {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+.modal {
+    position: absolute;
+    width: 528px;
+    height: 581px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);transition: transform 250ms linear;
 
-background: #FFFFFF;
-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-border-radius: 4px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 }
-*/
 
-/* 
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+}
 
-cubic-bezier(0.4, 0, 0.2, 1);
- */
+.modal-close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    top: 10px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
 
 .proba {
     transition: 1;

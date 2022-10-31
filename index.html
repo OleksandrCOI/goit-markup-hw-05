@@ -19,7 +19,7 @@
                     <a class="logo link" href="./index.html">Web<span class="logo-top">studio</span></a>
                     <ul class="top-nav list">
                         <li class="item">
-                            <a class="nav-studio link" href="./index.html">Студія</a>
+                            <a class="nav-studio link emphasis" href="./index.html">Студія</a>
                         </li>
                         <li class="item">
                             <a class="nav-portfolio link" href="./portfolio.html">Портфоліо</a>
@@ -58,7 +58,7 @@
         <main>
             <section class="hero">
                 <h1 class="hero-title">Ефективні рішення для <br />вашого бізнесу</h1>
-                <button class="button " type="button" cursor="pointer">Замовити послугу</button>
+                <button class="button" type="button" cursor="pointer" data-modal-open>Замовити послугу</button>
             </section>
             <section class="section section-features">
                 <div class="container">
@@ -117,13 +117,22 @@
                     <h2 class="section-title centered">Чим ми займаємося</h2>
                     <ul class="work-list list">
                         <li class="item">
-                            <img src="./images/workprogramming.jpg" alt="фото роботи за комп'ютером з кодом" width="370" />
+                            <div class="img-text-top">
+                                <img src="./images/workprogramming.jpg" alt="фото роботи за комп'ютером з кодом" width="370" />
+                                <p class="text-top">декстопні додатки</p>
+                            </div>
                         </li>
                         <li class="item">
-                            <img src="./images/workstyles.jpg" alt="фото роботи за комп'ютером зі стилями " width="370" />
+                            <div class="img-text-top">
+                                <img src="./images/workstyles.jpg" alt="фото роботи за комп'ютером зі стилями " width="370" />
+                                <p class="text-top">мобільні додатки</p>
+                            </div>
                         </li>
                         <li class="item">
-                            <img src="./images/workcolor.jpg" alt="фото роботи за комп'ютером з кольором" width="370" />
+                            <div class="img-text-top">
+                                <img src="./images/workcolor.jpg" alt="фото роботи за комп'ютером з кольором" width="370" />
+                                <p class="text-top">дизайнерські рішення</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -440,10 +449,17 @@
                 </div>
             </div>
         </footer>
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                <button type="button" class="modal-close" data-modal-close>
+                    <svg class="icon-modal-close" width="18" height="18">
+                        <use href="./images/icons.svg#icon-modal-close"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <script src="./js/modal.js"></script>
     </body>
 </html>
 
 
-<!-- status bar -->
-
-<!--!  <h1 class="animate__animated animate__bounce">An animated element</h1>  -->
